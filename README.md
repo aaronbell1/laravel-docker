@@ -90,6 +90,10 @@ docker-compose down
 > The MySQL container caches data so that it isn't erased each time you recreate it.  
 This can be viewed in `/storage/mysql` and manually deleted if needed.  
 
+### Viewing site
+
+The site can be viewed from `localhost`.
+
 ### Access PHP Container
 
 You can move into the php container by running:
