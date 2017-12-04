@@ -1,0 +1,30 @@
+version: '2'
+
+services:
+  web:
+    image: nginx:latest
+    ports:
+      - "80:80"
+    volumes:
+       - ./nginx/site.conf:/etc/nginx/conf.d/default.conf
+    volumes_from:
+      - php
+  php:
+    build:
+      context: php
+    volumes:
+      - ./code:/var/www
+  mysql:
+    image: mysql:5.7
+    ports:
+      - "3306:3306"
+    volumes:
+      - ./storage/mysql:/var/lib/mysql
+    environment:
+      - MYSQL_RANDOM_ROOT_PASSWORD=true
+      - MYSQL_DATABASE=lvdock
+      - MYSQL_USER=lvdock
+      - MYSQL_PASSWORD=secret
+  browser:
+    hostname: browser
+    image: selenium/standalone-chrome
