@@ -19,14 +19,16 @@ RUN docker-php-ext-install pdo pdo_mysql
 
 ## Install Node and tools
 RUN curl -sL https://deb.nodesource.com/setup_6.x | bash - && \
-  curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add - &&\
-  echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list \
-  && apt-get install -y nodejs \
-  && apt-get update -y && apt-get install -y yarn \
-  && npm install -g \
-  grunt-cli \
-  gulp-cli \
-  bower \
+    apt-get install -y nodejs && \
+    npm install -g \
+    grunt-cli \
+    gulp-cli \
+    bower
+
+## Install Yarn
+RUN curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add - &&\
+    echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list \
+    && apt-get update && apt-get install yarn
 
 # Set up the Chrome PPA
 RUN wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add - \
