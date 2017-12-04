@@ -40,7 +40,7 @@ The PHP container includes:
 Download or clone the repository to your required location:
 
 ```
-git clone *INSERT REPO HERE*
+git clone https://github.com/SwipeAndTap/laravel-docker.git
 ```
 <a name="setup"></a>
 ## Setup
