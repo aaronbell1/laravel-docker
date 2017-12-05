@@ -92,7 +92,10 @@ This can be viewed in `/storage/mysql` and manually deleted if needed.
 
 ### Viewing site
 
-The site can be viewed from `localhost`.
+The site can be viewed from `localhost:8888`.
+
+> If the port is already in use by another service then this can be changed in the `docker-compose.yml` file under
+under `services` > `web` > `ports`
 
 ### Access PHP Container
 
