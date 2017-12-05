@@ -55,12 +55,12 @@ Once this is done, all changes made to the files in this directory will be immed
 ### Database Settings
 
 1. Copy the `.env.mysql.example` file and create a version with the name `.env.mysql`. Edit the following 3 fields to 
-match your Laravel database configuration:
+match your Laravel `.env` database configuration:
   - `MYSQL_DATABASE` : name of the database to be created
   - `MYSQL_USER` : name of the user with access to the database
   - `MYSQL_PASSWORD` : password of the user with access to the database
 
-2. Update your `.env` file in the `code` directory to match the details above, making sure that the host is changed to
+2. Update your Laravel `.env` file in the `code` directory to make sure that the host is changed to
 `DB_HOST=mysql`
 
 > IF USING GITHUB YOU SHOULD NEVER COMMIT YOUR ENVIRONMENT FILES. THE .env.mysql FILE WILL BE IGNORED BY DEFAULT
