@@ -52,4 +52,9 @@ RUN wget -q --continue -P $CHROMEDRIVER_DIR "http://chromedriver.storage.googlea
 # Put Chromedriver into the PATH
 ENV PATH $CHROMEDRIVER_DIR:$PATH
 
+# Install PHPUnit
+RUN wget https://phar.phpunit.de/phpunit-6.5.phar \
+    && chmod +x phpunit-6.5.phar \
+    && mv phpunit-6.5.phar /usr/local/bin/phpunit
+
 WORKDIR /var/www
